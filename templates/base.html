@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+<title>Packs Ya | Claro Argentina</title>
+<link rel='shortcut icon' type='image/x-icon' href='./assets/favicon.ico' />
+<script src="{{ url_for('static', filename='/js/jquery-3.2.1.min.js') }}"  type="text/javascript"></script>
+<script src="{{ url_for('static', filename='/js/jquery.creditCardValidator.js') }}"></script>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/smartphone.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/estilaso.css') }}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Descargá el botón en tu celular y comprá tu pack en un solo click. Es rápido y simple.">
+<meta property="og:title" content="Packs YA">
+<meta property="og:description" content="Descargá el botón en tu celular y comprá tu pack en un solo click. Es rápido y simple.">
+<meta property="og:image" content="https://simple.claro.com.ar/inicio/assets/localized/ar/img/rich-preview.jpg">
+<link rel="preload" as="font" href="/inicio/assets/fonts/Icons/smartphone/icons.ttf" />
+<link rel="manifest" href="/inicio/assets/localized/ar/manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/icono-home-192.png">
+
+</head>
+
+
+
+    {% block content %}{% endblock %}
+
+
+</html>

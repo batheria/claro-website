@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+<div  thirdpartyrechargeenabled="true" id="root">
+	<div class="page-recharge-body">
+		<div class="page-recharge-tarjeta">
+			<div class="row">
+				<header class="header">
+					 
+					<p class="header__title">Ingresar nueva tarjeta</p>
+					
+				</header>
+				<div class="page-recharge-tarjeta">
+					<div class="row">
+						<header class="header">
+							 <a href="" ><img src="{{ url_for('static', filename='/img/icono-home-256.png') }}" style="width: 40px; height:40px;" alt=""></a>
+							 
+							<p class="header__title">Recarga</p>
+							
+						</header>
+						<h2 class="title__tarjeta title__tarjeta--small">¿Qué línea querés recargar?</h2>
+						<ol class="listamount">
+							<form>
+                        <a class="box__milinea" ammount_view href="{{ url_for('ammounts_view') }}"><div class="box__milinea__icon"><img src="{{ url_for('static', filename='img/icon_mi_linea.svg') }}"   alt="mi linea"></div><div class="box__milinea__data"><span class="box__milinea__data__title">Mi línea</span><span class="box__milinea__data__number" id="number" name="number">
+						{{ number_user }}
+						</span>
+                        
+                        <div id="milinea__arrow__button" class="box__milinea__arrow" type="button"></div>
+
+
+                    </div></a>
+
+                         
+						</ol>
+					</div>
+				</div>
+</body>
+{% endblock %}

