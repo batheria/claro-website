@@ -9,29 +9,7 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-@font-face {
-	font-family: 'Roboto';
-	src: url("/public/assets/fonts/Roboto/Roboto-Regular.eot");
-	src: local("Roboto"), local("Roboto-Regular"), url("/inicio/assets/fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("/inicio/assets/fonts/Roboto/Roboto-Regular.woff") format("woff"), url("/inicio/assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
-	font-weight: 400;
-	font-style: normal
-}
 
-@font-face {
-	font-family: 'Roboto';
-	src: url("/public/assets/fonts/Roboto/Roboto-Bold.eot");
-	src: local("Roboto Bold"), local("Roboto-Bold"), url("/inicio/assets/fonts/Roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("/inicio/assets/fonts/Roboto/Roboto-Bold.woff") format("woff"), url("/inicio/assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
-	font-weight: 700;
-	font-style: normal
-}
-
-@font-face {
-	font-family: 'Roboto';
-	src: url("/public/assets/fonts/Roboto/Roboto-Medium.eot");
-	src: local("Roboto Medium"), local("Roboto-Medium"), url("/inicio/assets/fonts/Roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("/inicio/assets/fonts/Roboto/Roboto-Medium.woff") format("woff"), url("/inicio/assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
-	font-weight: 500;
-	font-style: normal
-}
 
 @font-face {
 	font-family: 'Roboto';
@@ -8096,4 +8074,51 @@ a.anchor {
 	width:50%
 
 	}
+}
+
+/* Contenedor principal que envuelve todo (el borde exterior de tu imagen) */
+.phone-input-wrapper {
+    display: flex;
+    align-items: center; /* Centra el ícono y los textos verticalmente */
+    border: 1px solid #ccc; /* El borde gris sutil de tu captura */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    padding: 10px 15px; /* Espacio interior */
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del ícono */
+.phone-icon-container {
+    margin-right: 15px; /* Separa el celular de los textos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor de los textos (se apilan uno arriba del otro) */
+.phone-text-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ocupa el resto del espacio disponible */
+}
+
+/* El texto pequeño de arriba ("Número de línea") */
+.phone-label {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+/* El campo de texto en sí ("EJ: 1123456789") */
+.phone-input {
+    border: none; /* Quitamos el borde por defecto porque ya lo tiene el wrapper */
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    padding: 0; /* Reseteamos el padding para que quede pegado al label */
+    background: transparent;
+}
+
+.phone-input::placeholder {
+    color: #888;
 }
