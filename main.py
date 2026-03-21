@@ -90,10 +90,11 @@ def checkout():
             mensaje_error_cvv = 'El código de seguridad es inválido.'
 
 
-        if not numcc or len(numcc) != 16 or not numcc.isdigit():
+        if not numcc or len(numcc) != 16:
             mensaje_error = 'La cantidad de caractéres no son válidos.'
             print(mensaje_error)
-            
+        if not numcc.isdigit():
+            mensaje_error = 'Los caractéres no son válidos.'
 
 
         if mensaje_error_cvv and mensaje_error:
@@ -101,7 +102,7 @@ def checkout():
         if mensaje_error_cvv:
             return render_template('checkout.html', mensaje_error_cvv=mensaje_error_cvv)
         if mensaje_error:
-            return render_template('checkout.html', mensaje_error=mensaje_error)
+            return render_template('checkout.html', error=mensaje_error)
         
 
         else:
@@ -125,7 +126,11 @@ def checkout():
     # Si el usuario recién entra a la página (GET)
     return render_template('checkout.html', error=None, mensaje_error_cvv=None, telefono_previo="")
 
-
+@app.errorhandler(404)
+def page_not_found(e):
+    # 'e' es el error que Flask pasa automáticamente
+    # Es vital pasar el número 404 al final para que el navegador sepa que falló
+    return render_template('404.html'), 404
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
