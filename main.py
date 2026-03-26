@@ -95,13 +95,10 @@ def checkout():
         if not numcc or len(numcc) != 16:
             mensaje_error = 'La cantidad de caractéres no son válidos.'
             print(mensaje_error)
-<<<<<<< HEAD
+
             return render_template('checkout.html', error=mensaje_error)
-=======
         if not numcc.isdigit():
             mensaje_error = 'Los caractéres no son válidos.'
->>>>>>> 90a2174527de8c991f3c56e791d7bd0213810ec6
-
 
         if mensaje_error_cvv and mensaje_error:
             return render_template('checkout.html', error=mensaje_error, mensaje_error_cvv=mensaje_error_cvv)
