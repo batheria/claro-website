@@ -22,20 +22,19 @@
     <header class="header">
         <p class="header__title">Ingresar nueva tarjeta</p>
     </header>
-    <div class="page-recharge-tarjeta">
-        <div class="row">
-          <header class="header">
-              <a href="/" ><img src="{{ url_for('static', filename='/img/icono-home-256.png') }}" style="width: 40px; height:40px;" alt=""></a>
-                
-              <p class="header__title">Recarga con tarjeta</p>
-              <div class="number_container">
-                <p class="number_user_letter">{{ number }}</p>
-              </div>
-          </header>
+    <header class="header">
+        <a href="/" ><img src="{{ url_for('static', filename='/img/icono-home-256.png') }}" style="width: 40px; height:40px;" alt=""></a>
+            
+        <p class="header__title">Recarga con tarjeta</p>
+        <div class="number_container">
+          <p class="number_user_letter">{{ number }}</p>
+        </div>
+    </header>
+
     {% endblock %}
 
     
-    <body id="page-pin" class="page__pin">
+    <body>
       {% block content %}{% endblock %}
     </body>
     

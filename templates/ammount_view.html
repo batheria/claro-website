@@ -114,15 +114,16 @@
             ><source
                 data-testid="banner-incentivo-picture-mobile"
                 media="(max-width: 768px)"
-                srcset="https://landing.claro.com.ar/p/portal-compras/incentivo-monto-recarga-pp-default-mobile.jpg" />
+                srcset="{{ url_for('static', filename='/img/cash_back_grande.png') }}"/>
+                
             <source
                 data-testid="banner-incentivo-picture-desktop"
                 media="(min-width: 769px)"
-                srcset="https://landing.claro.com.ar/p/portal-compras/incentivo-monto-recarga-pp-default-desktop.jpg" />
+                srcset="{{ url_for('static', filename='/img/cash_back_chico.png') }}" />
             <img
                 data-testid="banner-incentivo-image"
                 class="banner-prepago"
-                src="https://landing.claro.com.ar/p/portal-compras/incentivo-monto-recarga-pp-default-mobile.jpg"
+                srcset="{{ url_for('static', filename='/img/cash_back_chico.png') }}
                 alt=""
         /></picture>
     </div>

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<body>
+<div class="row">
 <div  thirdpartyrechargeenabled="true" id="root">
 	<div class="page-recharge-body">
 		<div class="page-recharge-tarjeta">
@@ -16,7 +16,7 @@
 						<header class="header">
 							 <a href="" ><img src="{{ url_for('static', filename='/img/icono-home-256.png') }}" style="width: 40px; height:40px;" alt=""></a>
 							 
-							<p class="header__title">Recarga</p>
+							<p class="header__title">Recarga con tarjeta</p>
 							
 						</header>
 						<h2 class="title__tarjeta title__tarjeta--small">¿Qué línea querés recargar?</h2>
@@ -35,5 +35,5 @@
 						</ol>
 					</div>
 				</div>
-</body>
+</div>
 {% endblock %}
